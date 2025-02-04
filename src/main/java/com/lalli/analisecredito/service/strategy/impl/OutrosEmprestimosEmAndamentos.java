@@ -2,10 +2,12 @@ package com.lalli.analisecredito.service.strategy.impl;
 
 import com.lalli.analisecredito.domain.Proposta;
 import com.lalli.analisecredito.service.strategy.CalculoPonto;
+import org.springframework.stereotype.Component;
 
 import java.util.Random;
 
 // servico do BACEN
+@Component
 public class OutrosEmprestimosEmAndamentos implements CalculoPonto {
 
     @Override
