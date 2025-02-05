@@ -14,8 +14,5 @@ public class RendaMaiorValorSolicitado implements CalculoPonto {
 
     private boolean rendaMaiorValorSolicitado(Proposta proposta) {
         return proposta.getUsuario().getRenda() > proposta.getValorSolicitado();
-
     }
-
-
 }

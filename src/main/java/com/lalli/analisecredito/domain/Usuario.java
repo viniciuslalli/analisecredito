@@ -1,6 +1,5 @@
 package com.lalli.analisecredito.domain;
 
-
 import lombok.Getter;
 import lombok.Setter;
 

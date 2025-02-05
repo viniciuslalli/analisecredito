@@ -1,6 +1,8 @@
 package com.lalli.analisecredito.service.strategy.impl;
 
+import com.lalli.analisecredito.constantes.MensagemConstante;
 import com.lalli.analisecredito.domain.Proposta;
+import com.lalli.analisecredito.exceptions.StrategyException;
 import com.lalli.analisecredito.service.strategy.CalculoPonto;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
@@ -16,18 +18,17 @@ public class PontuacaoScoreImpl implements CalculoPonto {
         int score = score();
 
         if (score < 200) {
-            throw new RuntimeException("Score baixo");
+            throw new StrategyException(String.format(MensagemConstante.PONTUACAO_SERASA_BAIXA, proposta.getUsuario().getNome()));
         } else if (score <= 400) {
             return 150;
         } else if (score <= 600) {
             return 180;
         } else {
-            return 200;
+            return 220;
         }
     }
 
     private int score() {
-        // Aqui deveria verificar no serasa, spc, etc
         return new Random().nextInt(0, 1000);
     }
 }
